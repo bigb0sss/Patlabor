@@ -12,6 +12,7 @@
 #
 
 class color:
+    yellow = '\033[95m'
     blue = '\033[94m'
     green = '\033[92m'
     red = '\033[91m'
@@ -20,9 +21,8 @@ class color:
 import subprocess
 import sys
 import re
-import argparse
 
-if sys.argv[1] != "libc.so.6":
+def help():
     print(" ")
     print("              _   _       _                ")
     print("  _ __   __ _| |_| | __ _| |__   ___  _ __ ")
@@ -31,8 +31,11 @@ if sys.argv[1] != "libc.so.6":
     print(" | .__/ \__,_|\__|_|\__,_|_.__/ \___/|_|   ")
     print(" |_|                             bigb0ss   ")
     print(" ")
-    print(color.blue + "[*] Usage: python " + sys.argv[0] + color.red + ' "libc.so.6"' + color.end + color.blue + 'of your choice' + color.end)
-    exit(0)
+    print(color.yellow + "[*] Usage: python " + sys.argv[0] + color.red + ' "libc.so.6"' + color.yellow + 'of your choice' + color.end)
+    
+if len(sys.argv) < 2 or len(sys.argv) > 2:
+    help()
+    sys.exit(1)
 else:
     file = sys.argv[1]
 
@@ -50,9 +53,8 @@ def build_id(file):
 
 def arch(file):
     output = subprocess.check_output(["file", file])
-    for line in output.split(', '):
-        if re.search("ELF", line):
-            line = line[15:21]
+    for line in output.split(' '):
+        if re.search("bit", line):
             print(color.blue + "[+] Arch             : " + color.end + color.red + line + color.end)
 
 def malloc_hook(file):
@@ -64,7 +66,6 @@ def malloc_hook(file):
             line = int(line, 16)
             line = str(line)
             return(line)    
-
 malloc_hook(sys.argv[1])
 malloc_hook_output = malloc_hook(sys.argv[1])
 malloc_hex = int(malloc_hook_output)
@@ -102,15 +103,7 @@ def main_arena_offset(file):
         print("[-] Libc fucked -_-")
 
 def main():
-    print(" ")
-    print("              _   _       _                ")
-    print("  _ __   __ _| |_| | __ _| |__   ___  _ __ ")
-    print(" | '_ \ / _` | __| |/ _` | '_ \ / _ \| '__|")
-    print(" | |_) | (_| | |_| | (_| | |_) | (_) | |   ")
-    print(" | .__/ \__,_|\__|_|\__,_|_.__/ \___/|_|   ")
-    print(" |_|                             bigb0ss   ")
-    print(" ")
-    version(sys.argv[1])
+    help()
     arch(sys.argv[1])
     build_id(sys.argv[1])
     malloc_hook(sys.argv[1])
