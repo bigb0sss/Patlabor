@@ -104,9 +104,10 @@ def main_arena_offset(file):
 
 def main():
     help()
+    version(sys.argv[1])
     arch(sys.argv[1])
     build_id(sys.argv[1])
-    malloc_hook(sys.argv[1])
+    print(color.blue + "[+] malloc_hook      : " + color.end + hex(malloc_hex))
     main_arena_offset(sys.argv[1])
 
 if __name__ == "__main__":
