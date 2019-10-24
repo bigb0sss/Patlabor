@@ -1,5 +1,5 @@
 # Patlabor
-This Python tool will help finding "main_arena" offset value for both 32-bit and 64-bit libc.so.6.
+This Python tool will help finding a "main_arena" offset value for both 32-bit and 64-bit libc.so.6.
 
 Tested up to libc version 2.29.
 
