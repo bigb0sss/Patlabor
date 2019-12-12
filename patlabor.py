@@ -4,9 +4,10 @@
 # 
 # Version:
 #       1.0
+#
 # Author:
 #       bigb0ss
-# 
+#
 # Description:
 #       This helps to find main_arena offset value for both 32-bit and 64-bit libc.so.6
 #
@@ -29,7 +30,7 @@ def help():
     print(" | '_ \ / _` | __| |/ _` | '_ \ / _ \| '__|")
     print(" | |_) | (_| | |_| | (_| | |_) | (_) | |   ")
     print(" | .__/ \__,_|\__|_|\__,_|_.__/ \___/|_|   ")
-    print(" |_|                             bigb0ss   ")
+    print(" |_|                            [bigb0ss]  ")
     print(" ")
     print(color.yellow + "[*] Usage: python " + sys.argv[0] + color.red + ' "libc.so.6"' + color.yellow + 'of your choice' + color.end)
     
