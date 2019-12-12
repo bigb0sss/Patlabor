@@ -12,7 +12,7 @@ $  python patlabor.py
  | '_ \ / _` | __| |/ _` | '_ \ / _ \| '__|
  | |_) | (_| | |_| | (_| | |_) | (_) | |   
  | .__/ \__,_|\__|_|\__,_|_.__/ \___/|_|   
- |_|                             bigb0ss   
+ |_|                            [bigb0ss]   
  
 [*] Usage: python patlabor.py "libc.so.6"of your choice
 ```
