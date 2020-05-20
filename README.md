@@ -14,7 +14,7 @@ $  python patlabor.py
  | .__/ \__,_|\__|_|\__,_|_.__/ \___/|_|   
  |_|                            [bigb0ss]   
  
-[*] Usage: python patlabor.py "libc.so.6"of your choice
+[*] Usage: python patlabor.py "libc.so.6" of your choice
 ```
 
 
