@@ -4,7 +4,7 @@ This script will help you find a "main_arena" offset value for both 32-bit and 6
 Tested up to libc version 2.29.
 
 ### Usage
-```
+```python
 $  python patlabor.py 
  
               _   _       _                
